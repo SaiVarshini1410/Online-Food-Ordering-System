@@ -1,0 +1,526 @@
+Menu:
+package miniProject;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
+import java.text.SimpleDateFormat; 
+public class restaurant
+{
+public void menu() {
+while(true)
+{
+System.out.println("Select a restaurant near your location:");
+System.out.println("1.Dominos Pizza");
+System.out.println("2.MC Donalds");
+System.out.println("3.Baskins and Robins");
+System.out.println("4.Cream stone");
+Scanner sc = new Scanner(System.in);
+int hotel;
+int totalAmount = 0;
+int item;
+hotel=sc.nextInt();
+switch(hotel)
+{
+case 1:
+int flag=1;
+while(flag!=0)
+{
+System.out.println("select item from menu:");
+System.out.println("1.Margherita-Rs.200\n2.FarmhouseRs.300\n3.PeppyPanner-Rs.400\n4.Mexican Green Wave-Rs.500\n ");
+Scanner s = new Scanner(System.in);
+item=s.nextInt();
+switch(item)
+{
+case 1:
+System.out.println("Please enter the quantity");
+int n = s.nextInt();
+totalAmount = totalAmount + (n*200);
+break;
+case 2:
+System.out.println("Please enter the quantity");
+int m = s.nextInt();
+totalAmount = totalAmount + (m*300);
+break;
+case 3:
+System.out.println("Please enter the quantity");
+int p = s.nextInt();
+totalAmount = totalAmount + (p*400);
+break;
+case 4:
+System.out.println("Please enter the quantity");
+int q = s.nextInt();
+totalAmount = totalAmount + (q*500);
+break;
+default:
+System.out.println("Invalid input");
+}
+System.out.println("Do you need anything else?\n0 or 1");
+Scanner cs = new Scanner(System.in);
+int more = cs.nextInt();
+if(more == 0)
+{
+flag=0;
+payment(totalAmount);
+}
+else
+{
+flag=1;
+}
+//break;
+}
+case 2:
+int flag1=1;
+while(flag1!=0)
+{
+System.out.println("select item from menu:");
+System.out.println("1.Maharaja Mac-Rs.195\n2.McSpicy Paneer 
+Burger-Rs.160\n3.Mexican Cheesy Friesr-Rs.122\n4.veg combo-Rs.500");
+Scanner s = new Scanner(System.in);
+item=s.nextInt();
+switch(item)
+{
+case 1:
+System.out.println("Please enter the quantity");
+int n = s.nextInt();
+totalAmount = totalAmount + (n*195);
+break;
+case 2:
+System.out.println("Please enter the quantity");
+int m = s.nextInt();
+totalAmount = totalAmount + (m*160);
+break;
+case 3:
+System.out.println("Please enter the quantity");
+int p = s.nextInt();
+totalAmount = totalAmount + (p*122);
+break;
+case 4:
+System.out.println("Please enter the quantity");
+int q = s.nextInt();
+totalAmount = totalAmount + (q*500);
+break;
+default:
+System.out.println("Invalid input");
+}
+System.out.println("Do you need anything else?\n0 or 1");
+Scanner cs = new Scanner(System.in);
+int more = cs.nextInt();
+if(more == 0)
+{
+flag1=0;
+payment(totalAmount);
+}
+else
+{
+flag1=1;
+}
+//break;
+}
+case 3:
+int flag3=1;
+while(flag3!=0)
+{
+System.out.println("select item from menu:");
+System.out.println("1.Fresh Fruit Chikoo-Rs.281\n2.Honey nut 
+Crunch-Rs.334\n3.Pina Colada Ice Cream-Rs.329\n4.Hazelnut Rocher-Rs.500");
+Scanner s = new Scanner(System.in);
+item=s.nextInt();
+switch(item)
+{
+case 1:
+System.out.println("Please enter the quantity");
+int n = s.nextInt();
+totalAmount = totalAmount + (n*281);
+break;
+case 2:
+System.out.println("Please enter the quantity");
+int m = s.nextInt();
+totalAmount = totalAmount + (m*334);
+break;
+case 3:
+System.out.println("Please enter the quantity");
+int p = s.nextInt();
+totalAmount = totalAmount + (p*329);
+break;
+case 4:
+System.out.println("Please enter the quantity");
+int q = s.nextInt();
+totalAmount = totalAmount + (q*500);
+break;
+default:
+System.out.println("Invalid input");
+}
+System.out.println("Do you need anything else?\n0 or 1");
+Scanner cs = new Scanner(System.in);
+int more = cs.nextInt();
+if(more == 0)
+{
+flag1=0;
+payment(totalAmount);
+}
+else
+{
+flag1=1;
+}
+//break;
+}
+case 4:
+int flag4=0;
+while(flag4!=0)
+{
+System.out.println("select item from menu:");
+System.out.println("1.Malai Tub-Rs.100\n2.Willi wonkaRs.200\n3.Rich Dark Chocolate-Rs.399\n4.Oreo Shot-Rs.150");
+Scanner s = new Scanner(System.in);
+item=s.nextInt();
+switch(item)
+{
+case 1:
+System.out.println("Please enter the quantity");
+int n = s.nextInt();
+totalAmount = totalAmount + (n*100);
+break;
+case 2:
+System.out.println("Please enter the quantity");
+int m = s.nextInt();
+totalAmount = totalAmount + (m*200);
+break;
+case 3:
+System.out.println("Please enter the quantity");
+int p = s.nextInt();
+totalAmount = totalAmount + (p*399);
+break;
+case 4:
+System.out.println("Please enter the quantity");
+int q = s.nextInt();
+totalAmount = totalAmount + (q*150);
+break;
+default:
+System.out.println("Invalid input");
+}
+System.out.println("Do you need anything else?\n0 or 1");
+Scanner cs = new Scanner(System.in);
+int more = cs.nextInt();
+if(more == 0)
+{
+flag1=0;
+payment(totalAmount);
+}
+else
+{
+flag1=1;
+}
+//break;
+}
+default :
+System.out.println("Invalid input");
+break;
+}
+}
+}
+public void payment(int totalAmount) 
+{
+double taxOnGood=0.0;
+double initialBill=0;
+double totaltax=0;
+if(totalAmount<=1000)
+{
+taxOnGood=0.05;
+totaltax=0.05*totalAmount;
+initialBill=totaltax+totalAmount;
+System.out.println("Total is: "+ initialBill);
+}
+else if(totalAmount>1000 && totalAmount<=5000) {
+taxOnGood=0.1;
+totaltax=0.1*totalAmount;
+initialBill=totaltax+totalAmount;
+System.out.println("Total is: "+ initialBill);
+}
+else
+{
+taxOnGood=1.8;
+totaltax=1.8*totalAmount;
+initialBill=totaltax+totalAmount;
+System.out.println("Total is: "+ initialBill);
+}
+delivery(initialBill);
+}
+public void delivery(double initialBill)
+{
+int deliveryCharges = 50;
+double totalBill=deliveryCharges + initialBill;
+System.out.println("Total bill to be paid with delivery charges is: "+ totalBill);
+paymentMode();
+System.exit(0);
+}
+static boolean flag1 = true;
+public static boolean isValidCardNumber()
+{
+Scanner sc = new Scanner(System.in);
+String cardNumber = sc.nextLine();
+Pattern p = Pattern.compile("(?:\\d[ -]*?){13,16}");
+Matcher m = p.matcher(cardNumber); 
+flag1=m.find() && m.group().equals(cardNumber);
+ return (m.find() && m.group().equals(cardNumber)); 
+}
+public static boolean isValidCvv()
+{
+Scanner sc = new Scanner(System.in);
+String cvv = sc.nextLine();
+Pattern p = Pattern.compile("^[0-9]{3,4}$");
+Matcher m = p.matcher(cvv); 
+flag1=m.find() && m.group().equals(cvv);
+ return (m.find() && m.group().equals(cvv)); 
+}
+public static boolean isValidDate()
+{
+Scanner sc = new Scanner(System.in);
+String expiryDate = sc.nextLine();
+Pattern p = Pattern.compile("(0[1-9]|1[0-2])\\/?(([0-9]{4})|[0-9]{2}$)");
+Matcher m = p.matcher(expiryDate); 
+flag1=m.find() && m.group().equals(expiryDate);
+ return (m.find() && m.group().equals(expiryDate)); 
+}
+Login Details:
+package miniProject;
+import java.util.Scanner;
+import java.util.regex.*;
+class LoginDetails 
+{
+String number = null;
+ static boolean flag=true;
+public static boolean isValid(String number)
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter your phone number:");
+number = sc.nextLine();
+Pattern p = Pattern.compile("(?:0\\/91)?([7-9][0-9]{9})");
+Matcher m = p.matcher(number); 
+flag=m.find() && m.group().equals(number);
+ return (m.find() && m.group().equals(number)); 
+}
+public String phoneNumber()
+{
+int i=0;
+if (isValid(number)) 
+{
+System.out.println("Valid Number"); 
+}
+else
+{
+while(!flag)
+{
+System.out.println("Enter phone number again cuz it was 
+invalid: ");
+isValid(number);
+//continue;
+}
+}
+return number; 
+}
+}
+class emailIdDetails 
+{
+static String email= null;
+static boolean flag1=true;
+public boolean isValid(String email) 
+ { 
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter your emailId:");
+email = sc.nextLine();
+ String emailRegex ="^.+[^@]+@[A-z]+\\.(?:)com$";
+ Pattern pat = Pattern.compile(emailRegex); 
+ if (email == null) 
+ return false;
+ flag1=pat.matcher(email).matches();
+ return pat.matcher(email).matches(); 
+ } 
+public String emailId() 
+{
+if (isValid(email)) 
+ System.out.println("valid information"); 
+ else
+ {
+ while(!flag1)
+{
+System.out.println("Enter email again cuz it was invalid: ");
+isValid(email);
+//continue;
+}
+ 
+ }
+ 
+return null;
+}
+}
+class passwordDetails
+{
+static String password="";
+static boolean flag2=true;
+public static boolean isValidPassword(String password) 
+ { 
+Scanner ps = new Scanner(System.in);
+System.out.println("Enter your password:");
+password = ps.nextLine();
+ String regex = "^(?=.*[0-9])"
+ + "(?=.[a-z])(?=.[A-Z])"
+ + "(?=.*[@#$%^&+=])"
+ + "(?=\\S+$).{8,20}$"; 
+ Pattern p = Pattern.compile(regex); 
+ 
+ if (password == null) { 
+ return false; 
+ } 
+ //flag2=m.matches();
+ Matcher m = p.matcher(password); 
+ return m.matches(); 
+ } 
+public String passwordvalid()
+{
+//String password="";
+if (isValidPassword(password)) 
+ System.out.println("Valid password"); 
+ else
+ {
+ while(!flag2)
+{
+System.out.println("Enter password again cuz it was invalid: ");
+isValidPassword(password);
+}
+//return null;
+}
+return password;
+ 
+}
+}
+class nameDetails
+{
+Scanner sc = new Scanner(System.in);
+nameDetails()
+{
+System.out.println("Enter your name:");
+String name = sc.nextLine();
+}
+}
+class addressDetails{
+Scanner sc = new Scanner(System.in);
+public void address(){
+System.out.println("Enter your Address:");
+String address = sc.nextLine();
+}
+}
+public class onlineFoodOrdering extends restaurant
+{ 
+public static void main(String[] args)
+{
+LoginDetails l = new LoginDetails();
+emailIdDetails e = new emailIdDetails();
+nameDetails n = new nameDetails();
+passwordDetails p= new passwordDetails();
+l.phoneNumber();
+e.emailId();
+p.passwordvalid();
+addressDetails ad = new addressDetails();
+ad.address();
+restaurant res= new restaurant();
+res.menu();
+}
+}
+Payment Mode:
+public void paymentMode(){
+Scanner sc = new Scanner(System.in);
+System.out.println("Select the mode of payment:");
+System.out.println("1.Cash on delivery\n2.Card\n3.PayU");
+int mode = sc.nextInt();
+switch(mode)
+{
+case 1:
+System.out.println("Please keep the exact change ready");
+break;
+case 2:
+System.out.println("Enter the Card Details:");
+System.out.println("Enter the Card Number:");
+if(isValidCardNumber())
+{
+System.out.println("Proceeding further...");
+}
+else
+{
+while(!flag1)
+{
+System.out.println("Please enter the valid number");
+if(isValidCardNumber())
+{
+break;
+}
+}
+}
+System.out.println("Enter the name of card holder:");
+Scanner sc1 = new Scanner(System.in);
+String name = sc1.nextLine();
+System.out.println("Enter the CVV:");
+if(isValidCvv())
+{
+System.out.println("Proceeding further...");
+}
+else
+{
+while(!flag1)
+{
+System.out.println("Please enter the valid number");
+if(isValidCvv())
+{
+break;
+}
+}
+}
+System.out.println("Enter the expiry date:");
+if(isValidDate())
+{
+System.out.println("Card Details Verified");
+}
+else
+{
+while(!flag1)
+{
+System.out.println("Please enter the correct expiry 
+date");
+if(isValidDate())
+{
+break;
+}
+}
+}
+System.out.println("Please wait...");
+System.out.println("Proceeding for payment");
+try
+{ 
+TimeUnit.SECONDS.sleep(20);
+}
+catch(Exception e)
+{
+System.out.println("Exception handled");
+}
+System.out.println("Payment successful");
+break;
+case 3:
+System.out.println("Bill payment proceeding through PayU...");
+try
+{ 
+TimeUnit.SECONDS.sleep(30);
+}
+catch(Exception e)
+{
+System.out.println("Exception handled");
+}
+System.out.println("Payment successful");
+break;
+default:
+System.out.println("Invalid input");
+break;
+}
+SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+System.out.println("Your order will be delivered within 40 minutes by 
+"+formatter.format(System.currentTimeMillis()+(40*60*1000)));
+}
+}
